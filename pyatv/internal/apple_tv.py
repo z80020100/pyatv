@@ -340,7 +340,9 @@ class PushUpdaterInternal(PushUpdater):
             # It is not pretty to disable pylint here, but we must catch _all_
             # exceptions to keep the API.
             except Exception as ex:  # pylint: disable=broad-except
-                _LOGGER.debug('Playstatus error occurred: %s', ex)
+                import traceback
+                _LOGGER.debug('Playstatus error occurred: %s\n',
+                              ''.join(traceback.format_tb(ex.__traceback__)))
                 self._loop.call_soon(self.listener.playstatus_error, self, ex)
                 break
 
