@@ -25,8 +25,8 @@ setup(
         'curve25519-donna>=1.3, <2',
         'ed25519>=1.4, <2',
         'srptools>=0.1.1',
-        'zeroconf>=0.17.7',
-        'netifaces==0.10.5'
+        'zeroconf==0.17.7',
+        'six==0.10.0'
     ],
     test_suite='tests',
     keywords=['apple', 'tv'],
